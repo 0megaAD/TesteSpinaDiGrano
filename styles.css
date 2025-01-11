@@ -1,225 +1,339 @@
-/* Reset básico de estilo */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
     background-image: url('TortadeFrangoMilho.jpg'), url('quiche2.jpg'), url('nhoque.jpeg');
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-repeat: repeat-x;
     background-attachment: fixed;
-    color: #333;
-    line-height: 1.6;
+    animation: moveBackground 30s linear infinite;
 }
 
-/* Container principal do menu */
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
 .menu-container {
-    max-width: 1000px;
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.85); 
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
 
 .menu-container:hover {
-    transform: translateY(-5px);
-}
-
-/* Cabeçalho do menu */
-.menu-header {
-    background: linear-gradient(135deg, #FFBB33, #FF6600);
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.menu-header h1 {
-    font-size: 3em;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Seções de itens de menu */
-.menu-section {
-    margin-top: 30px;
-}
-
-.menu-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
-    border-bottom: 2px solid #FF6600;
-    padding-bottom: 10px;
-}
-
-/* Itens do menu */
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.menu-item:hover {
-    background-color: #f2f2f2;
     transform: scale(1.02);
 }
 
+.menu-header {
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-header1 {
+    background: linear-gradient(90deg, rgb(0, 59, 3) 0%, rgb(0, 214, 36) 100%);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-header h1, .menu-header1 h1 {
+    margin: 0;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-section {
+    padding: 20px;
+}
+
+.menu-section h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #0f5800;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0f5800;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #c5c4c4;
+}
+
 .menu-item h3 {
-    color: #333;
+    margin: 0;
     font-size: 1.2em;
+    color: #0f5800;
+}
+
+.menu-item p {
+    margin: 0;
+    color: #414141;
 }
 
 .price {
-    font-size: 1.2em;
+    color: #0f5800;
     font-weight: bold;
-    color: #FF6600;
+    align-self: center;
+    font-size: 1.1em;
 }
 
-/* Rodapé */
 .footer {
     text-align: center;
-    margin-top: 40px;
-    background-color: #333;
-    color: #fff;
-    padding: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 30px 0;
+}
+
+.footer-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    height: auto;
 }
 
 .footer-info {
-    margin-top: 20px;
+    background-color: #dbdbdb;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 65, 0, 0.1);
 }
 
 .footer-info h2 {
+    color: #0f5800;
     font-size: 1.8em;
-    color: #FF6600;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .contact-item {
-    font-size: 1.2em;
-    margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
 }
 
 .contact-item i {
     font-size: 1.5em;
-    color: #FF6600;
+    color: #0f5800;
 }
 
 .contact-item span {
-    color: #fff;
+    color: #004904;
 }
 
-/* Promoções */
 .promotion-section {
-    background-color: #FFEBCC;
+    background-color: #fffbcc;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.promotion-section:hover {
+    transform: scale(1.02);
 }
 
 .promotion-section h2 {
+    color: #d48800;
     font-size: 2em;
     margin-bottom: 10px;
-    color: #FF6600;
 }
 
 .promotion-item {
-    background-color: #fff;
-    padding: 15px;
     margin: 10px 0;
+    padding: 15px;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .promotion-item h3 {
+    margin: 0;
     font-size: 1.5em;
-    color: #FF6600;
+    color: #d48800;
+}
+
+.promotion-item p {
+    margin: 5px 0;
+    color: #555;
 }
 
 .promotion-price {
-    font-size: 1.2em;
+    color: #d48800;
     font-weight: bold;
-    color: #FF6600;
+    font-size: 1.2em;
 }
 
-/* Botões */
 button {
-    background-color: #FF6600;
+    background-color: #28a745;
     color: #fff;
     font-size: 1.2em;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: #e55a00;
-    transform: translateY(-3px);
-}
-
-button:active {
-    transform: translateY(1px);
-}
-
-/* Formulário de pedidos */
-.order-form {
-    background-color: #fff;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-top: 40px;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-.order-form input, .order-form select, .order-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    font-size: 1.1em;
-    transition: border-color 0.3s ease;
-}
-
-.order-form input:focus, .order-form select:focus, .order-form textarea:focus {
-    border-color: #FF6600;
-    outline: none;
-}
-
-.order-form button {
-    background-color: #FF6600;
-    color: #fff;
     padding: 15px 30px;
     border: none;
     border-radius: 25px;
-    font-size: 1.2em;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.order-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-form input, .order-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.order-form button {
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.order-form button:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulário escondido inicialmente */
+#formularioPedido {
+    display: none;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px; /* Limita a largura */
+    margin: 20px auto;
     transition: all 0.3s ease;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-form h2 {
+    font-size: 1.8em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.order-form label {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.order-form input,
+.order-form textarea {
+    font-size: 1.1em;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    resize: vertical; /* Permite que o usuário redimensione a altura */
+    min-height: 150px; /* Define uma altura mínima */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px; /* Espaço entre os campos */
+}
+
+.order-form textarea:focus {
+    border-color: #007bff;
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Melhorando o estilo do label para o campo de pedido */
+.order-form label[for="Pedido"] {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: left;
+    display: block;
+}
+
+/* Adicionando um efeito de foco suave no texto do campo */
+.order-form textarea::placeholder {
+    color: #bbb; /* Cor de texto do placeholder */
+    font-style: italic;
+}
+
+.order-form button {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2em;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     width: 100%;
 }
 
 .order-form button:hover {
-    background-color: #e55a00;
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Efeito de movimento ao passar o mouse */
+}
+
+.order-form button:active {
+    transform: translateY(1px); /* Efeito ao pressionar */
+}
+
+.order-form button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Efeito de foco */
 }
