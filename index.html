@@ -373,11 +373,15 @@
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
                       
-                        <button type="submit">Enviar Pedido</button>
+                        <button type="submitOrder">Enviar Pedido</button>
                       </form>
                 </div>
             </div>
-        
+                <script>
+                document.getElementById('submitOrder').addEventListener('click', function() {
+                document.getElementById('thankYouMessage').style.display = 'block';
+                });
+                </script>
             <script src="script.js"></script>
         </body>
         </html>
